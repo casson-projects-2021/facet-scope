@@ -1,32 +1,74 @@
-<!DOCTYPE html>
-<html data-tampered="false">
-<head>
-    <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Godot Tamper Monkey Detector</title>
-    <script>
-setTimeout(() => 
-{   if( document.documentElement.dataset[ "tampered" ] == "true" ) 
-    {   fetch( "http://localhost:8765/event-tamper", 
-        {   method: 'POST',
-            body: JSON.stringify({ msg: "ping" })
-        }).catch( err => 
-        {   console.log( "Godot offline, tamper" );
-            //window.location.href = "https://azgaar.github.io/Fantasy-Map-Generator/";
-        });
-        // tamper monkey will close this window, the tab cannot close itself, it was opened
-        // using the OS
-        // setTimeout(() => { window.close(); }, 1000 );
-    } 
-    //else window.location.href = "https://azgaar.github.io/Fantasy-Map-Generator/";
-}, 500 );
+<html data-userscript="false">
+    <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+<style>
+body 
+{
+    margin: 0;
+    height: 100vh;
+    background-color: #050b14; /* Fundo azul escuro base */
+    
+    background-image: 
+        linear-gradient(to right, rgba(30, 144, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(30, 144, 255, 0.05) 1px, transparent 1px),
+        
+        linear-gradient(to right, rgba(0, 119, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 119, 255, 0.15) 1px, transparent 1px);
 
-fetch( "http://localhost:8765/event-page", 
-{   method: 'POST',
-    body: JSON.stringify({ msg: "ping" })
-}).catch( err => console.log( "Godot offline" ));
-    </script>
-</head>
-<body>
-</body>
+    background-size: 
+        20px 20px,
+        20px 20px,
+        40px 40px,
+        40px 40px;
+}
+.panel
+{
+    margin: 25px;
+    border: 2px solid rgba( 228, 228, 228, 0.2 );
+    border-radius: 4px;
+    max-width: 520px;
+    font-family: "Orbitron", sans-seriff;
+    color: rgba( 228, 228, 228, 0.4 );
+    padding-left: 15px; padding-right: 15px;
+    text-align: center;
+    background-color: rgba( 228, 228, 228, 0.1 );
+}
+.big_button
+{
+    width: 80%;
+    height: 40px;
+    font-family: "Orbitron", sans-seriff;
+    cursor: hand;
+}
+.a_button
+{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-radius: 2px;
+    font-family: "Orbitron", sans-seriff;
+    font-size: 0.8em;
+    padding: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+</style>
+    </head>
+    <body>
+        <div class="panel">
+            <h1>1st - Install Tamper Monkey</h1><br/>
+            <span>(skip if it is already installed)</span><br/><br/>
+            <button class="big_button" onclick="window.open( 'https://www.tampermonkey.net/', 'tamper' )"
+                >click to go to the extension's page</button><br/><br/>
+        </div>
+        <br/>
+        <div class="panel">
+            <h1>Extension: Godot Azgaar Map Bridge</h1><br/>
+            <span>(skip if it is already installed)</span><br/><br/>
+            <a href="https://casson-projects-2021.github.io/facet-scope/user_scripts/map_bridge.user.js" class="a_button"
+                >Add UserScript to Tamper Monkey</a><br/><br/>
+        </div>
+    </body>
 </html>
