@@ -15,7 +15,9 @@
 const curr_url = window.location.href;
   
 if( curr_url.includes( "casson-projects-2021.github.io" ))
-    document.documentElement.dataset[ "tampered" ] = "true";
+{   document.documentElement.dataset[ "tampered" ] = "true";
+    setTimeout(() => { window.close(); }, 1000 );
+}
 else
 {   console.log( "to implement" );
 }    
