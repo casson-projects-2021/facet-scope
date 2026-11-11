@@ -12,13 +12,13 @@ setTimeout(() =>
             body: JSON.stringify({ msg: "ping" })
         }).catch( err => 
         {   console.log( "Godot offline, tamper" );
-            window.location.href = "https://azgaar.github.io/Fantasy-Map-Generator/";
+            //window.location.href = "https://azgaar.github.io/Fantasy-Map-Generator/";
         });
         // tamper monkey will close this window, the tab cannot close itself, it was opened
         // using the OS
         // setTimeout(() => { window.close(); }, 1000 );
     } 
-    else window.location.href = "https://azgaar.github.io/Fantasy-Map-Generator/";
+    //else window.location.href = "https://azgaar.github.io/Fantasy-Map-Generator/";
 }, 500 );
 
 fetch( "http://localhost:8765/event-page", 
